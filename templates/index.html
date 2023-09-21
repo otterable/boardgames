@@ -126,6 +126,26 @@
                 text-align: center;
             }
         }
+		
+					.calendly-button2 {
+        background-color: #2C2C54;
+		            font-weight: bold;
+
+        color: white;
+        border: none;
+            padding: 30px 60px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+  
+    .calendly-button2:hover {
+        background-color: #80A4ED;  /* A darker shade when hovered */
+    }
     </style>
 	
     <script>
@@ -149,7 +169,7 @@
     
     <div id="header">
     <div class="logo-container">
-        <a href="https://ermine.at" target="_blank"> <!-- Add anchor tag for the logo -->
+        <a href="https://boardgames.ermine.at" target="_blank"> <!-- Add anchor tag for the logo -->
             <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
         </a>
     </div>
@@ -160,9 +180,11 @@
         <div id="all-art">
             <h2>We have created several board games and expansions.</h2> 
 			<h2>Click below to see their individual pages.</h2>
-                    <a class="button button-color-9" href="https://ttr.ermine.at" target="_blank">Ticket to Ride: Wien</a>
-					<a class="button button-color-9" href="https://geisterspiel.ermine.at" target="_blank">Der Schatz von Siebenbürgen</a>
-					<a class="button button-color-9" href="" target="_blank">Coming soon ♥</a>
+                    <a class="button button-color-9" href="https://boardgames.ermine.at/ttr" target="_blank">Ticket to Ride: Wien</a>
+					<a class="button button-color-9" href="https://boardgames.ermine.at/geisterspiel" target="_blank">Der Schatz von Siebenbürgen</a>
+											<button class="calendly-button2" onclick="window.location.href='https://radlzentrum.ermine.at'">Zurück zum Menü</button>
+
+					<a class="button button-color-9" href="" target="_blank">More to come ♥</a>
                 </div>
             </div>
 			
