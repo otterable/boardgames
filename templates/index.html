@@ -146,30 +146,37 @@
     .calendly-button2:hover {
         background-color: #80A4ED;  /* A darker shade when hovered */
     }
+	
+	   .button:hover {
+            transform: scale(1.02); /* Scale up the button */
+        }
     </style>
 	
     <script>
-        // Randomly shuffle the button colors on page load
         document.addEventListener('DOMContentLoaded', function() {
             var buttons = document.querySelectorAll('.button');
             var buttonColors = ['button-color-1', 'button-color-2', 'button-color-3', 'button-color-4', 'button-color-5', 'button-color-6', 'button-color-7', 'button-color-8'];
 
+            var usedColors = new Set();
+
             buttons.forEach(function(button) {
-                var randomIndex = Math.floor(Math.random() * buttonColors.length);
+                var randomIndex;
+                do {
+                    randomIndex = Math.floor(Math.random() * buttonColors.length);
+                } while (usedColors.has(randomIndex));
+                
+                usedColors.add(randomIndex);
                 button.classList.add(buttonColors[randomIndex]);
             });
         });
     </script>
 </head>
 <body>
-    <video id="video-background" autoplay muted loop>
-        <source src="{{ url_for('static', filename='video.mp4') }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+
     
     <div id="header">
     <div class="logo-container">
-        <a href="https://boardgames.ermine.at" target="_blank"> <!-- Add anchor tag for the logo -->
+        <a href="https://ermine.at" target="_blank"> <!-- Add anchor tag for the logo -->
             <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
         </a>
     </div>
@@ -182,7 +189,6 @@
 			<h2>Click below to see their individual pages.</h2>
                     <a class="button button-color-9" href="https://otterable3.github.io" target="_blank">Ticket to Ride: Wien</a>
 					<a class="button button-color-9" href="https://otterable4.github.io" target="_blank">Der Schatz von Siebenbürgen</a>
-											<button class="calendly-button2" onclick="window.location.href='https://radlzentrum.ermine.at'">Zurück zum Menü</button>
 
 					<a class="button button-color-9" href="" target="_blank">More to come ♥</a>
                 </div>
